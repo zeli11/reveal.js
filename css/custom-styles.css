@@ -1,0 +1,396 @@
+@import url(https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap);
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+}
+
+/* CSS */
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+/* CSS */
+.button-start {
+  background-color: #3DD1E7;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 200px;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 40px;
+  
+}
+
+.button-start:focus {
+  outline: 0;
+}
+
+.button-start:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button-start:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-start {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+.paper {
+  width: 300px;
+  height: 220px;
+  margin: 2em auto;
+  background: linear-gradient(#fef1c3 98%, #e0b8b8 98%);
+  background-size: 100% 30px;
+  background-position: 0 1em;
+  padding: 1em;
+  -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+  -moz-transition: -moz-transform .15s linear;
+  -o-transition: -o-transform .15s linear;
+  -webkit-transition: -webkit-transform .15s linear;
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  transition: .15s linear, right .5s ease-out;
+  position: fixed;
+  right: 200%;
+  opacity: 0;
+  z-index: 1000;
+  display: block;
+  font-size: 25px;
+}
+
+.paper.show {
+  display: block;
+  right: 700px; /* Slide-in effect from the left */
+  opacity: 1;
+}
+
+.paper.hide {
+  display: block;
+  right: 200%; /* Slide-out effect from the left */
+  opacity: 1;
+}
+
+.reenie-beanie {
+  font-family: "Reenie Beanie", arial, sans-serif;
+  font-size: 180%;
+}
+
+
+/* CSS: Home button */
+.button-home {
+  top: 40px;
+  /* Ajusta según sea necesario */
+  right: 60px;
+  /* Ajusta según sea necesario */
+  align-items: center;
+  appearance: none;
+  background-color: #f5efdb;
+  border-radius: 30px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  visibility:hidden;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-height: 70px;
+  max-width: 75px;
+  overflow: hidden;
+  padding: 2px 10px;
+  position: absolute;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 75px;
+  height: 70px;
+  z-index: 1000;
+  transform-origin: center center;
+  transform: scale(1);
+}
+
+.button-home:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.button-home:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.button-home:focus {
+  outline: none;
+}
+
+.button-home:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-home:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button-home:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-home:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-home:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-spacing {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* Ajusta el valor según sea necesario */
+}
+
+/* CSS: Tips button */
+.button-tips {
+  top: 80px;
+  right: 140px;
+  align-items: center;
+  appearance: none;
+  background-color: #0000004f;
+  border-radius: 100%;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #ffff00;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: visible;
+  padding: 10px 10px;
+  position: absolute;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 60px;
+  height: 60px;
+  will-change: transform, opacity;
+  z-index: 1000;
+}
+
+.button-tips:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.button-tips:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.button-tips:focus {
+  outline: none;
+}
+
+.button-tips:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-tips:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button-tips:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-tips:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-tips:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+/* CSS: Back button */
+.button-back {
+  top: 520px; /* Ajusta según sea necesario */
+  right: 20px; /* Ajusta según sea necesario */  
+  align-items: center;
+  appearance: none;
+  background-color: #faefcb;
+  border-radius: 100%;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  visibility: hidden;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 80px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: visible;
+  padding: 10px 10px;
+  position: absolute;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 80px;
+  height: 80px;
+  will-change: transform,opacity;
+  z-index: 1000;
+  perspective: 600px;
+  perspective-origin: 50% 40%
+}
+
+.button-back:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.button-back:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.button-back:focus {
+  outline: none;
+}
+
+.button-back:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-back:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button-back:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-back:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-back:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.img-small {
+  height: 250px;
+  width: auto;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  transform-origin: center center;
+}
+
+.img-large{
+  transform: translate(0, -50%) scale(1);
+  z-index: 1000;
+  transition: 0.3s ease-in-out;
+  transform-origin: center center;
+  cursor: pointer;
+  height: auto; /* Mantén el aspecto original */
+  max-width: 90%;
+  max-height: 90%;
+}
