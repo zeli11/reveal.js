@@ -7,8 +7,11 @@
   height: 2em;
 }
 
-/* CSS */
-.button-74 {
+/* CSS
+    src: https://getcssscan.com/css-buttons-examples
+    "Button 74" by UIForms 
+*/
+.button-options {
   background-color: #fbeee0;
   border: 2px solid #422800;
   border-radius: 30px;
@@ -27,23 +30,26 @@
   touch-action: manipulation;
 }
 
-.button-74:hover {
+.button-options:hover {
   background-color: #fff;
 }
 
-.button-74:active {
+.button-options:active {
   box-shadow: #422800 2px 2px 0 0;
   transform: translate(2px, 2px);
 }
 
 @media (min-width: 768px) {
-  .button-74 {
+  .button-options {
     min-width: 120px;
     padding: 0 25px;
   }
 }
 
-/* CSS */
+/* CSS
+    src: https://getcssscan.com/css-buttons-examples
+    "Button 53", by Alpine Day
+*/
 .button-start {
   background-color: #3DD1E7;
   border: 0 solid #E5E7EB;
@@ -98,6 +104,8 @@
   }
 }
 
+/* src: https://codea.app/blog/crea-una-hoja-de-notas-con-css
+   src: https://webdesign.tutsplus.com/es/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934t */
 .paper {
   width: 300px;
   height: 220px;
@@ -141,13 +149,13 @@
   font-size: 180%;
 }
 
-
-/* CSS: Home button */
+/* CSS: Home button 
+    src: https://getcssscan.com/css-buttons-examples
+    "Button 17", by Google
+*/
 .button-home {
   top: 40px;
-  /* Ajusta según sea necesario */
   right: 60px;
-  /* Ajusta según sea necesario */
   align-items: center;
   appearance: none;
   background-color: #f5efdb;
@@ -227,7 +235,10 @@
   /* Ajusta el valor según sea necesario */
 }
 
-/* CSS: Tips button */
+/* CSS: Tips button 
+    src: https://getcssscan.com/css-buttons-examples
+    "Button 17", by Google
+*/
 .button-tips {
   top: 80px;
   right: 140px;
@@ -300,7 +311,10 @@
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
-/* CSS: Back button */
+/* CSS: Back button 
+    src: https://getcssscan.com/css-buttons-examples
+    "Button 17", by Google
+*/
 .button-back {
   top: 520px; /* Ajusta según sea necesario */
   right: 20px; /* Ajusta según sea necesario */  

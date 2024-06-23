@@ -3,18 +3,16 @@
 <!-- .slide: title="Inicio" -->
 Prueba de interpretación 
 
-electrocardiagrama (ECG)
+electrocardiograma (ECG)
 <i class="fa-solid fa-heart-pulse"></i>
 
-<a href="#/1">
+<a href="#/frecuencia-cardiaca">
     <div class="center-button">
         <button class="button-start" role="button">EMPEZAR</button>
     </div>
 </a>
 
-<div>
-
-</div>
+<div></div>
 
 ---
 
@@ -26,41 +24,41 @@ electrocardiagrama (ECG)
 
 ![ECG](img/ECG_PARTEBRADICARDIAS0.png)
 
-<a href="#/2">
-    <input type="button" value="BRADICARDIA (<60)" class="button-74 button-spacing" role="button">
-</a><input type="button" value="NORMAL (60-100)" class="button-74 button-spacing" role="button"><input type="button" value="TAQUICARDIA (>100)" class="button-74 button-spacing" role="button">
+<a href="#/ondas-p-1">
+    <input type="button" value="BRADICARDIA (<60)" class="button-options button-spacing" role="button">
+</a><input type="button" value="NORMAL (60-100)" class="button-options button-spacing" role="button"><input type="button" value="TAQUICARDIA (>100)" class="button-options button-spacing" role="button">
 
 ---
 
 # ONDAS P
-<!-- .slide: id="onda-p-1" -->
-<!-- .slide: title="Onda P 1" -->
+<!-- .slide: id="ondas-p-1" -->
+<!-- .slide: title="Ondas P 1" -->
 
 ¿Existen ondas P?
 
 ![ECG](img/ECG_PARTEBRADICARDIAS1.png)
 
-<a href="#/3">
-    <input type="button" value="SÍ" class="button-74 button-spacing" role="button">
-</a><input type="button" value="NO" class="button-74 button-spacing" role="button">
+<a href="#/ondas-p-2">
+    <input type="button" value="SÍ" class="button-options button-spacing" role="button">
+</a><input type="button" value="NO" class="button-options button-spacing" role="button">
 
 ---
 
 # ONDAS P
-<!-- .slide: id="onda-p-2" -->
-<!-- .slide: title="Onda P 2" -->
+<!-- .slide: id="ondas-p-2" -->
+<!-- .slide: title="Ondas P 2" -->
 
 ¿Hay alguna onda P que no conduce a un QRS?
 
-<img height="250" src="img/ECG_PARTEBRADICARDIAS2.png">
+&thinsp; ![](img/ECG_PARTEBRADICARDIAS2.png) <!-- .element height="250px" --> &thinsp;
 
 <div></div>
-<a href="#/4">
-    <input type="button" value="SÍ" class="button-74 button-spacing" role="button">
-</a><a href="#/5">
-<input type="button" value="NO" class="button-74 button-spacing" role="button">
-</a><a href="#/9">
-    <input type="button" value="NO HAY RELACIÓN ENTRE P Y QRS" class="button-74 button-spacing" role="button">
+<a href="#/intervalo-pr-1">
+    <input type="button" value="SÍ" class="button-options button-spacing" role="button">
+</a><a href="#/intervalo-pr-2">
+<input type="button" value="NO" class="button-options button-spacing" role="button">
+</a><a href="#/bloqueo-av-3-grado-completo">
+    <input type="button" value="NO HAY RELACIÓN ENTRE P Y QRS" class="button-options button-spacing" role="button">
 </a>
 
 ---
@@ -71,6 +69,7 @@ electrocardiagrama (ECG)
 
 ¿Cuánto mide el intervalo PR?
 
+<!-- src: https://fontawesome.com/icons/lightbulb?f=classic&s=solid -->
 <button class="button-tips button-spacing" role="button">
     <i class="fa-solid fa-lightbulb"></i>
 </button>
@@ -80,14 +79,14 @@ electrocardiagrama (ECG)
     <h4>Se considera una elevación de ST un desnivel de 2 cuadraditos pequeños respecto a línea basal del ECG</h4>
 </div>
 
-<img height="250" src="img/ECG_PARTEBRADICARDIAS3.png">
+&thinsp; ![](img/ECG_PARTEBRADICARDIAS3.png) <!-- .element height="250px" --> &thinsp;
 
 <div></div>
-<a href="#/8">
-    <input type="button" value="CONSTANTE" class="button-74 button-spacing" role="button">
+<a href="#/bloqueo-av-2-grado-mobitz-2">
+    <input type="button" value="CONSTANTE" class="button-options button-spacing" role="button">
 </a>
-<a href="#/7">
-    <input type="button" value="SE ALARGA PROGRESIVAMENTE" class="button-74 button-spacing" role="button">
+<a href="#/bloqueo-av-2-grado-mobitz-1">
+    <input type="button" value="SE ALARGA PROGRESIVAMENTE" class="button-options button-spacing" role="button">
 </a>
 
 ---
@@ -98,24 +97,25 @@ electrocardiagrama (ECG)
 
 ¿Cuánto mide el intervalo PR?
 
+<!-- src: https://fontawesome.com/icons/lightbulb?f=classic&s=solid -->
 <button class="button-tips button-spacing" role="button">
     <i class="fa-solid fa-lightbulb"></i>
 </button>
-
 
 <div class="paper">
     <h3><b>Nota</b></h3>
     <h4>Se considera una elevación de ST un desnivel de 2 cuadraditos pequeños respecto a línea basal del ECG</h4>
 </div>
 
-<img height="250" src="img/ECG_PARTEBRADICARDIAS4.png">
+&thinsp; ![](img/ECG_PARTEBRADICARDIAS4.png) <!-- .element height="250px" --> &thinsp;
+
 
 <div></div>
-<a href="#/6">
-    <input type="button" value="NORMAL" class="button-74 button-spacing" role="button">
+<a href="#/segmento-st">
+    <input type="button" value="NORMAL" class="button-options button-spacing" role="button">
 </a>
-<a href="#/9">
-    <input type="button" value="ALARGADO" class="button-74 button-spacing" role="button">
+<a href="#/bloqueo-av-1-grado">
+    <input type="button" value="ALARGADO" class="button-options button-spacing" role="button">
 </a>
 
 ---
@@ -126,14 +126,14 @@ electrocardiagrama (ECG)
 
 ¿Cómo es el ST?
 
-<img height="250" src="img/ECG_PARTEBRADICARDIAS5.jpg">
+&thinsp; ![](img/ECG_PARTEBRADICARDIAS5.jpg) <!-- .element height="250px" --> &thinsp;
 
 <div></div>
-<a href="#/12">
-    <input type="button" value="NORMAL" class="button-74 button-spacing" role="button">
+<a href="#/bradicardia-sinusal">
+    <input type="button" value="NORMAL" class="button-options button-spacing" role="button">
 </a>
-<a href="#/11">
-    <input type="button" value="ELEVACIÓN / DEPRESIÓN DE ST" class="button-74 button-spacing" role="button">
+<a href="#/isquemia-cardiaca">
+    <input type="button" value="ELEVACIÓN / DEPRESIÓN DE ST" class="button-options button-spacing" role="button">
 </a>
 
 ---
@@ -142,7 +142,7 @@ electrocardiagrama (ECG)
 <!-- .slide: id="bloqueo-av-1-grado" -->
 <!-- .slide: title="Bloqueo auriculoventricular 1er grado" -->
 
-<img class="img-small" src="img/ECG_PARTEBRADICARDIAS6.jpg">
+&thinsp; ![](img/ECG_PARTEBRADICARDIAS6.jpg) <!-- .element height="250px" class="img-small"--> &thinsp;
 
 ---
 
@@ -150,7 +150,7 @@ electrocardiagrama (ECG)
 <!-- .slide: id="bloqueo-av-2-grado-mobitz-1" -->
 <!-- .slide: title="Bloqueo auriculoventricular 2º grado Mobitz 1" -->
 
-<img class="img-small" src="img/ECG_PARTEBRADICARDIAS7.jpg">
+&thinsp; ![](img/ECG_PARTEBRADICARDIAS7.jpg) <!-- .element height="250px" class="img-small"--> &thinsp;
 
 ---
 
@@ -158,7 +158,7 @@ electrocardiagrama (ECG)
 <!-- .slide: id="bloqueo-av-2-grado-mobitz-2" -->
 <!-- .slide: title="Bloqueo auriculoventricular 2º grado Mobitz 2" -->
 
-<img class="img-small" src="img/ECG_PARTEBRADICARDIAS8.jpg">
+&thinsp; ![](img/ECG_PARTEBRADICARDIAS8.jpg) <!-- .element height="250px" class="img-small"--> &thinsp;
 
 ---
 
@@ -166,7 +166,7 @@ electrocardiagrama (ECG)
 <!-- .slide: id="bloqueo-av-3-grado-completo" -->
 <!-- .slide: title="Bloqueo auriculoventricular 3º grado / completo" -->
 
-<img class="img-small" src="img/ECG_PARTEBRADICARDIAS9.png">
+&thinsp; ![](img/ECG_PARTEBRADICARDIAS9.png) <!-- .element height="250px" class="img-small"--> &thinsp;
 
 ---
 
@@ -174,7 +174,7 @@ electrocardiagrama (ECG)
 <!-- .slide: id="isquemia-cardiaca" -->
 <!-- .slide: title="Isquemia cardíaca / síndrome coronario agudo" -->
 
-<img class="img-small" src="img/ECG_PARTEBRADICARDIAS10.png">
+&thinsp; ![](img/ECG_PARTEBRADICARDIAS10.png) <!-- .element height="250px" class="img-small"--> &thinsp;
 
 ---
 
@@ -182,4 +182,4 @@ electrocardiagrama (ECG)
 <!-- .slide: id="bradicardia-sinusal" -->
 <!-- .slide: title="Bradicardia sinusal" -->
 
-<img id="bradicardiaImage" class="img-small" src="img/ECG_PARTEBRADICARDIAS11.jpg">
+&thinsp; ![](img/ECG_PARTEBRADICARDIAS11.jpg) <!-- .element height="250px" class="img-small"--> &thinsp;
