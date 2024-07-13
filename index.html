@@ -57,9 +57,9 @@
 		// - https://revealjs.com/initialization/
 		// - https://revealjs.com/config/
 		Reveal.initialize({
-			activityId: 'http://www.mypresentations.com/demos/pres1',
-			activityName: 'A demo RevealJS presentation.',
-			activityDescription: 'Just a demo presentation to test the xAPI plugin.',
+			activityId: 'http://www.pruebaecg.com/demo1',
+			activityName: 'Presentación demo de prueba ECG',
+			activityDescription: 'Esta es una presentación interactiva de demostración para la prueba de interpretación ECG.',
 			hash: true,
 			controls: false,
 			progress: false,
@@ -142,8 +142,10 @@
 				img.addEventListener('click', function () {
 					this.classList.toggle('img-large');
 					this.classList.toggle('img-small');
+
+					sendStatementImage(this.id);
 				});
-			})
+			});
 		}
 
 		function imgSmall() {
@@ -165,6 +167,11 @@
 				toggleButtonVisibility(event);
 				setupPaperButton();
 				imageManager();
+				sendStatementButtonStart();
+				sendStatementButtonHome();
+				sendStatementButtonBack();
+				sendStatementButtonOptions();
+				sendStatementButtonTips();
 			});
 		});
 
@@ -176,16 +183,161 @@
 	</script>
 
 	<script>
-		// ADL LRS Configuration - Basic Auth for demo purposes  
-		if (ADL.XAPIWrapper.lrs.actor == undefined) {
+		function generarRandomUsername() {
+			const adjetivos = [
+				'Rápido', 'Lento', 'Feliz', 'Triste', 'Valiente', 'Listo', 'Fuerte', 'Débil', 'Inteligente', 'Enérgico',
+				'Gracioso', 'Tímido', 'Amable', 'Cruel', 'Sabio', 'Serio', 'Generoso', 'Tranquilo', 'Joven', 'Viejo'
+			];
+			const sustantivos = [
+				'León', 'Tigre', 'Oso', 'Lobo', 'Zorro', 'Águila', 'Alpaca', 'Elefante', 'Koala', 'Gacela',
+				'Canguro', 'Delfín', 'Tiburón', 'Jirafa', 'Cebra', 'Cisne', 'Puma', 'Pato', 'Búho', 'Gorila'
+			];
+			const adjetivoAleatorio = adjetivos[Math.floor(Math.random() * adjetivos.length)];
+			const sustantivoAleatorio = sustantivos[Math.floor(Math.random() * sustantivos.length)];
+			const numeroAleatorio = Math.floor(Math.random() * 1000);
+			return `${adjetivoAleatorio}${sustantivoAleatorio}${numeroAleatorio}`;
+		}
+
+		// Configuración del actor y LRS
+		function configurarLRS() {
+			const randomUsername = generarRandomUsername();
 			var conf = {
 				"endpoint": "https://test-xapi-zeli.lrs.io/xapi/",
 				"auth": "Basic " + toBase64('zeli:zeli'),
-				"actor": '{"mbox": "mailto:reveal-user@somedomain.com","name": "RevealCC User","objectType": "Agent"}'
+				"actor": JSON.stringify({
+					"mbox": `mailto:${randomUsername}@somedomain.com`,
+					"name": randomUsername,
+					"objectType": "Agent"
+				})
 			};
 			ADL.XAPIWrapper.changeConfig(conf);
 		}
+
+		// Configuración inicial del LRS
+		if (ADL.XAPIWrapper.lrs.actor == undefined) {
+			configurarLRS();
+		}
+
+		// Envío de declaración xAPI
+		function enviarDeclaracionXAPI(verbId, verbDisplay, objectId, objectName, objectDescription) {
+			var statement = {
+				"actor": JSON.parse(ADL.XAPIWrapper.lrs.actor),
+				"verb": {
+					"id": verbId,
+					"display": verbDisplay
+				},
+				"object": {
+					"id": objectId,
+					"definition": {
+						"name": objectName,
+						"description": objectDescription
+					},
+					"objectType": "Activity"
+				},
+				"timestamp": new Date().toISOString()
+			};
+
+			ADL.XAPIWrapper.sendStatement(statement, function (response, obj) {
+				if (response.status >= 200 && response.status < 400) {
+					console.log("Declaración xAPI enviada exitosamente.");
+				} else {
+					console.log("Error al enviar la declaración xAPI: ", response);
+				}
+			});
+		}
+
+		function sendStatementButtonStart() {
+			var buttonStart = document.getElementById("button-start");
+			if (buttonStart) {
+				buttonStart.addEventListener("click", function () {
+					enviarDeclaracionXAPI(
+						"http://adlnet.gov/expapi/verbs/interacted",
+						{ "en-US": "interacted", "es-ES": "interactuó" },
+						`http://www.pruebaecg.com/demo1/${this.id}`,
+						{ "en-US": "Start Button", "es-ES": "Botón de inicio" },
+						{ "en-US": `The Start button: ${this.id}`, "es-ES": `El botón de inicio: ${this.id}` }
+					);
+				});
+			}
+		}
+
+		function sendStatementButtonHome() {
+			var buttonHome = document.getElementById("button-home");
+			if (buttonHome) {
+				buttonHome.addEventListener("click", function () {
+					enviarDeclaracionXAPI(
+						"http://adlnet.gov/expapi/verbs/interacted",
+						{ "en-US": "interacted", "es-ES": "interactuó" },
+						`http://www.pruebaecg.com/demo1/${this.id}`,
+						{ "en-US": "Home Button", "es-ES": "Botón Home" },
+						{ "en-US": `The Home button: ${this.id}`, "es-ES": `El botón Home: ${this.id}` }
+					);
+				});
+			}
+		}
+
+		function sendStatementButtonBack() {
+			var buttonBack = document.getElementById("button-back");
+			if (buttonBack) {
+				buttonBack.addEventListener("click", function () {
+					enviarDeclaracionXAPI(
+						"http://adlnet.gov/expapi/verbs/interacted",
+						{ "en-US": "interacted", "es-ES": "interactuó" },
+						`http://www.pruebaecg.com/demo1/${this.id}`,
+						{ "en-US": "Back Button", "es-ES": "Botón de regreso" },
+						{ "en-US": `The Back button: ${this.id}`, "es-ES": `El botón de regreso: ${this.id}` }
+					);
+				});
+			}
+		}
+
+		function sendStatementButtonTips() {
+			var buttonTipsList = document.querySelectorAll(".button-tips");
+
+			buttonTipsList.forEach(buttonTip => {
+				if (buttonTip) {
+					buttonTip.addEventListener("click", function () {
+						enviarDeclaracionXAPI(
+							"http://adlnet.gov/expapi/verbs/interacted",
+							{ "en-US": "interacted", "es-ES": "interactuó" },
+							`http://www.pruebaecg.com/demo1/${this.id}`,
+							{ "en-US": `Tips button: ${this.id}`, "es-ES": `Botón de notas: ${this.id}` },
+							{ "en-US": `The Tips button: ${this.id}`, "es-ES": `El botón de notas: ${this.id}` }
+						);
+					});
+				}
+			});
+		}
+
+		function sendStatementButtonOptions() {
+			var buttonOptionsList = document.querySelectorAll(".button-options");
+
+			buttonOptionsList.forEach(buttonOptions => {
+				if (buttonOptions) {
+					buttonOptions.addEventListener("click", function () {
+						enviarDeclaracionXAPI(
+							"http://adlnet.gov/expapi/verbs/interacted",
+							{ "en-US": "interacted", "es-ES": "interactuó" },
+							`http://www.pruebaecg.com/demo1/${this.id}`,
+							{ "en-US": `Options button: ${this.id}`, "es-ES": `Botón de opciones: ${this.id}` },
+							{ "en-US": `The Options button: ${this.id}`, "es-ES": `El botón de opciones: ${this.id}` }
+						);
+					});
+				}
+			});
+		}
+
+		function sendStatementImage(imageId) {
+			enviarDeclaracionXAPI(
+				"http://adlnet.gov/expapi/verbs/interacted",
+				{ "en-US": "interacted", "es-ES": "interactuó" },
+				`http://www.pruebaecg.com/demo1/${imageId}`,  // ID único de la imagen
+				{ "en-US": `Image Interaction: ${imageId}`, "es-ES": `Interacción con Imagen: ${imageId}` },
+				{ "en-US": `User interacted with an image: ${imageId}`, "es-ES": `El usuario interactuó con una imagen: ${imageId}` }
+			);
+		}
 	</script>
+
 </body>
 
 </html>
