@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/solarized.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	<!-- ADL xapi wrapper -->
+	<script src="plugin/reveal-xapi/xapiwrapper.min.js" type="text/javascript"></script>
+
+	<!-- custom .css -->
+	<link rel="stylesheet" href="css/custom-styles.css">
+	<!-- icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+	<div class="fade-up">
+		<button class="button-home" id="button-home" onclick="goToFirstSlide()" data-visibility="hidden">
+			<i class="fa fa-home">
+			</i>
+		</button>
+		<!-- src: https://fontawesome.com/icons/circle-left?f=classic&s=regular -->
+		<button class="button-back button-spacing" id="button-back" role="button"
+			onclick="window.history.go(-1); return false;" type="submit">
+			<i class="fa-regular fa-circle-left">
+			</i>
+		</button>
+	</div>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+			<section data-markdown="out.md" data-separator="^\r\n---\r\n$" data-separator-vertical="^\r\n--\r\n$">
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/reveal-xapi/reveal-xapi.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			activityId: 'http://www.mypresentations.com/demos/pres1',
+			activityName: 'Presentación demo de prueba ECG',
+			activityDescription: 'Esta es una presentación interactiva de demostración para la prueba de interpretación ECG.',
+			hash: true,
+			controls: false,
+			progress: false,
+			history: true,
+			center: true,
+			keyboard: false,
+			backgroundTransition: 'slide',
+
+			dependencies: [
+				{ src: 'plugin/reveal-xapi/reveal-xapi.js', async: true }
+			],
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+
+	<script>
+		function goToFirstSlide() {
+			Reveal.slide(0, 500, 0);
+		}
+	</script>
+
+	<script>
+		function toggleButtonVisibility(event) {
+			const buttonHome = document.getElementById("button-home");
+			const buttonBack = document.getElementById("button-back");
+			const currentSlideIndex = event.indexh;
+			if (currentSlideIndex === 0) {
+				buttonHome.style.visibility = "hidden";
+				buttonBack.style.visibility = "hidden";
+			} else {
+				buttonHome.style.visibility = "visible";
+				buttonBack.style.visibility = "visible";
+			}
+		}
+	</script>
+
+	<script>
+		function setupPaperButton() {
+			// var buttonTips = document.getElementById("button-tips");
+			var buttonTipsList = document.querySelectorAll(".button-tips");
+			// var paperElement = document.getElementById("paper");
+			var paperElementList = document.querySelectorAll(".paper");
+
+			// console.log(buttonTipsList);
+			buttonTipsList.forEach(buttonTip => {
+				if (buttonTip) {
+					buttonTip.addEventListener('click', function () {
+						paperElementList.forEach(paper => {
+							if (paper && !paper.classList.contains('show')) {
+								paper.classList.add('show');
+								paper.classList.remove('hide');
+							} else {
+								paper.classList.remove('show');
+								paper.classList.add('hide');
+							}
+						}
+						)
+					});
+				}
+			});
+		}
+
+		function hidePaper() {
+			var paperElementList = document.querySelectorAll(".paper");
+			paperElementList.forEach(paper => {
+				if (paper) {
+					paper.classList.remove('show');
+					paper.classList.add('hide');
+				}
+			})
+		}
+	</script>
+
+	<script>
+		function imageManager() {
+			var imageList = document.querySelectorAll(".img-small");
+			imageList.forEach(img => {
+				img.addEventListener('click', function () {
+					this.classList.toggle('img-large');
+					this.classList.toggle('img-small');
+				});
+			})
+		}
+
+		function imgSmall() {
+			var imageList = document.querySelectorAll(".img-large");
+			imageList.forEach(img => {
+				if (img) {
+					img.classList.remove('img-large');
+					img.classList.add('img-small');
+					img.style.transformOrigin = 'center center';
+				}
+			});
+		}
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// Inicializar el estado del botón cuando la presentación está lista
+			Reveal.addEventListener('ready', function (event) {
+				toggleButtonVisibility(event);
+				setupPaperButton();
+				imageManager();
+			});
+		});
+
+		Reveal.addEventListener('slidechanged', (event) => {
+			toggleButtonVisibility(event);
+			hidePaper();
+			imgSmall();
+		});
+	</script>
+
+	<script>
+		function generarRandomUsername() {
+			const adjetivos = ['Rápido', 'Lento', 'Feliz', 'Triste', 'Valiente', 'Listo'];
+			const sustantivos = ['León', 'Tigre', 'Oso', 'Lobo', 'Zorro', 'Águila'];
+			const adjetivoAleatorio = adjetivos[Math.floor(Math.random() * adjetivos.length)];
+			const sustantivoAleatorio = sustantivos[Math.floor(Math.random() * sustantivos.length)];
+			const numeroAleatorio = Math.floor(Math.random() * 1000);
+			return `${adjetivoAleatorio}${sustantivoAleatorio}${numeroAleatorio}`;
+		}
+
+
+		// ADL LRS Configuration - Basic Auth for demo purposes  
+		if (ADL.XAPIWrapper.lrs.actor == undefined) {
+			const randomUsername = generarRandomUsername;
+			var conf = {
+				"endpoint": "https://test-xapi-zeli.lrs.io/xapi/",
+				"auth": "Basic " + toBase64('zeli:zeli'),
+				"actor": JSON.stringify({
+					"mbox": `mailto:${randomUsername}@somedomain.com`,
+					"name": randomUsername,
+					"objectType": "Agent"
+				})
+			};
+			ADL.XAPIWrapper.changeConfig(conf);
+		}
+	</script>
+</body>
+
+</html>
